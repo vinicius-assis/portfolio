@@ -1,10 +1,11 @@
 import React from 'react'
 
-import GlobalStyle from './Generic/general'
-import Header from './Components/Header'
-import Logo from './Objects/Logo'
-import About from './Objects/Sobre'
-import { Menu, Center } from './Objects/Menu'
+import GlobalStyle from './generic/general'
+import Header from './components/Header'
+import Logo from './objects/Logo'
+import About from './objects/Sobre'
+import { Menu, Center } from './objects/Menu'
+import Board from './objects/Board'
 
 const App = () => (
   <>
@@ -17,6 +18,8 @@ const App = () => (
         <Center />
       </Menu>
     </Header>
+
+    <Board />
   </>
 )
 

@@ -8,7 +8,7 @@ const Center = styled.span`
   width: 100%;
   height: 4px;
   border-radius: 2px;
-  background-color: #707070;
+  background-color: var(--color-fourth);
   margin-bottom: 5px;
 `
 
@@ -24,7 +24,7 @@ const Menu = styled.a.attrs({ title: 'Menu' })`
     width: 100%;
     height: 4px;
     border-radius: 2px;
-    background-color: #707070;
+    background-color: var(--color-fourth);
   }
 
   ::before {

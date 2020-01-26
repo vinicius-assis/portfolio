@@ -7,8 +7,8 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
  }
  body {
-  background-color: #eee;
-  color: #707070;
+  background-color: var(--color-second);
+  color: var(--color-fourth);
   font-family: "Montserrat";
   font-size: 10px;
  }
