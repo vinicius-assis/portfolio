@@ -6,6 +6,7 @@ import Logo from './objects/Logo'
 import About from './objects/Sobre'
 import { Menu, Center } from './objects/Menu'
 import Board from './objects/Board'
+import Player from './objects/Player'
 
 const App = () => (
   <>
@@ -20,6 +21,7 @@ const App = () => (
     </Header>
 
     <Board />
+    <Player>X</Player>
   </>
 )
 
