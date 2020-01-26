@@ -20,8 +20,9 @@ const App = () => (
       </Menu>
     </Header>
 
-    <Board />
-    <Player />
+    <Board>
+      <Player player="x" />
+    </Board>
   </>
 )
 
