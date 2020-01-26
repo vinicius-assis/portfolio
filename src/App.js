@@ -21,7 +21,7 @@ const App = () => (
     </Header>
 
     <Board />
-    <Player>X</Player>
+    <Player />
   </>
 )
 
