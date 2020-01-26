@@ -4,7 +4,7 @@ import GlobalStyle from './Generic/general'
 import Header from './Components/Header'
 import Logo from './Objects/Logo'
 import About from './Objects/Sobre'
-import Menu from './Objects/Menu'
+import { Menu, Center } from './Objects/Menu'
 
 const App = () => (
   <>
@@ -13,7 +13,9 @@ const App = () => (
     <Header>
       <Logo />
       <About>About</About>
-      <Menu />
+      <Menu>
+        <Center />
+      </Menu>
     </Header>
   </>
 )
