@@ -3,8 +3,7 @@ import React from 'react'
 import GlobalStyle from './style/generic/general'
 import Header from './components/Header'
 import Board from './objects/Board'
-import Label from './objects/Label'
-import Input from './objects/Input'
+import Input from './objects/ShowEvents'
 
 const App = () => (
   <>
@@ -14,7 +13,6 @@ const App = () => (
     <Board />
 
     <Input />
-    <Label>Mostrar eventos</Label>
   </>
 )
 
