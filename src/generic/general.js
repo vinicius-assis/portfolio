@@ -12,5 +12,13 @@ const GlobalStyle = createGlobalStyle`
   font-family: "Montserrat";
   font-size: 10px;
  }
+
+ ul, ol {
+  list-style: none;
+ }
+
+ #root {
+  text-align: center;
+ }
 `
 export default GlobalStyle

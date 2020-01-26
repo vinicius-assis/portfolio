@@ -5,8 +5,17 @@ import Player from '../../objects/Player'
 const Grid = styled.ul`
   display: grid;
   height: 100%;
-  grid-template-columns: 33.333% 33.333% 33.333%;
-  grid-template-rows: 33.333% 33.333% 33.333%;
+  background-color: var(--color-third);
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+
+  & > .grid-item {
+    background-color: var(--color-zero);
+    display: flex;
+    justify-content: center;
+  }
 `
 
 const Field = () => (
