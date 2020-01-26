@@ -5,8 +5,8 @@ import Header from './components/Header'
 import Logo from './objects/Logo'
 import About from './objects/Sobre'
 import { Menu, Center } from './objects/Menu'
+import Field from './components/PlayerField'
 import Board from './objects/Board'
-import Player from './objects/Player'
 
 const App = () => (
   <>
@@ -21,7 +21,7 @@ const App = () => (
     </Header>
 
     <Board>
-      <Player player="x" />
+      <Field />
     </Board>
   </>
 )
