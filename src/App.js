@@ -1,6 +1,6 @@
 import React from 'react'
 
-import GlobalStyle from './generic/general'
+import GlobalStyle from './style/generic/general'
 import Header from './components/Header'
 import Logo from './objects/Logo'
 import About from './objects/Sobre'
