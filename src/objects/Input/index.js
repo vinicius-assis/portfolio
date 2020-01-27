@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Show = styled.input.attrs(props => ({
-  id: 'show',
+  id: props.id,
   type: props.input,
-  value: 'show'
+  value: props.value
 }))``
 
 const Label = styled.label.attrs({
@@ -19,10 +19,10 @@ const Label = styled.label.attrs({
   }
 `
 
-const Input = ({ type }) => (
+const Input = ({ type, content, id, value }) => (
   <>
-    <Show input={type} />
-    <Label>Mostrar eventos</Label>
+    <Show input={type} id={id} value={value} />
+    <Label>{content}</Label>
   </>
 )
 

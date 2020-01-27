@@ -12,7 +12,7 @@ const App = () => (
 
     <Board />
 
-    <Input type="checkbox" />
+    <Input type="checkbox" content="Mostrar eventos" id="show" value="show" />
   </>
 )
 
