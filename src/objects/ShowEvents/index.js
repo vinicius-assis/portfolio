@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Show = styled.input.attrs({
+const Show = styled.input.attrs(props => ({
   id: 'show',
-  type: 'checkbox',
+  type: props.input,
   value: 'show'
-})``
+}))``
 
 const Label = styled.label.attrs({
   for: 'show'
@@ -19,9 +19,9 @@ const Label = styled.label.attrs({
   }
 `
 
-const Input = () => (
+const Input = ({ type }) => (
   <>
-    <Show />
+    <Show input={type} />
     <Label>Mostrar eventos</Label>
   </>
 )

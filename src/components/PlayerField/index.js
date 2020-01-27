@@ -27,7 +27,7 @@ const Field = () => (
       <Player player="x" />
     </li>
     <li className="grid-item">
-      <Player player="o" />
+      <Player player="x" />
     </li>
     <li className="grid-item">
       <Player player="x" />

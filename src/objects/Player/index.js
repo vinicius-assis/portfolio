@@ -3,9 +3,10 @@ import styled from 'styled-components'
 import playerX from '../../img/X.png'
 import playerO from '../../img/Circle.png'
 
-const Image = props => (
-  <img src={props.img === 'x' ? playerX : playerO} alt="Player indicator"></img>
-)
+const Image = styled.img.attrs(props => ({
+  src: props.img === 'x' ? playerX : playerO,
+  alt: `Image of player ${props.img.toUpperCase()}`
+}))``
 
 const Button = styled.button`
   background: none;

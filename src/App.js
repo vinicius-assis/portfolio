@@ -12,7 +12,7 @@ const App = () => (
 
     <Board />
 
-    <Input />
+    <Input type="checkbox" />
   </>
 )
 
