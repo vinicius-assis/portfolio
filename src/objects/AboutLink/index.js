@@ -5,6 +5,7 @@ const AboutLink = styled.a`
   font-weight: bold;
   margin-left: auto;
   margin-right: 10px;
+  ${props => (props.light ? 'color: var(--color-zero)' : '')}
 `
 
 export default AboutLink
