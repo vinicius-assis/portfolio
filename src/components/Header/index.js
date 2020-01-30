@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Logo from '../../objects/Logo'
-import About from '../../objects/Sobre'
+import AboutLink from '../../objects/AboutLink'
 import { Menu, Center } from '../../objects/Menu'
 
 const Wrapper = styled.nav`
@@ -17,7 +17,7 @@ const Wrapper = styled.nav`
 const Header = () => (
   <Wrapper>
     <Logo />
-    <About>About</About>
+    <AboutLink>About</AboutLink>
     <Menu>
       <Center />
     </Menu>
