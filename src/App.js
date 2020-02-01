@@ -9,15 +9,7 @@ import About from './objects/About'
 const App = () => {
   const [activeAbout, setActiveAbout] = useState(false)
 
-  const handleClick = () => {
-    if (activeAbout) {
-      setActiveAbout(false)
-      console.log('False')
-    } else {
-      setActiveAbout(true)
-      console.log('True')
-    }
-  }
+  const handleClick = () => activeAbout ? setActiveAbout(false) : setActiveAbout(true)
 
   return (
     <>
