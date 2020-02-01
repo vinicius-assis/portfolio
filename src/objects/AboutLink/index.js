@@ -5,6 +5,7 @@ const AboutLink = styled.a`
   font-weight: bold;
   margin-left: auto;
   margin-right: var(--spacing-small);
+  cursor: pointer;
   ${props => (props.light ? 'color: var(--color-zero)' : '')}
 `
 

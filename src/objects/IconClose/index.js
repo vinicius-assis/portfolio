@@ -6,6 +6,7 @@ const Close = styled.a`
   display: inline-block;
   width: 24px;
   height: 24px;
+  cursor: pointer;
 
   & > span {
     display: inline-block;
@@ -34,8 +35,8 @@ const Close = styled.a`
   }
 `
 
-const IconClose = () => (
-  <Close>
+const IconClose = ({ onClick }) => (
+  <Close onClick={onClick} >
     <span>Fechar</span>
   </Close>
 )

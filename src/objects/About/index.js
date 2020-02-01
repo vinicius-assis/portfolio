@@ -18,12 +18,12 @@ const AboutWrapper = styled.article`
   transition: transform 200ms linear;  
 `
 
-const About = () => (
-  <AboutWrapper>
+const About = ({ active, onClick }) => (
+  <AboutWrapper active={active}>
     <HeaderInternal>
       <Logo light />
-      <AboutLink light> About </AboutLink>
-      <IconClose />
+      <AboutLink light onClick={onClick}> About </AboutLink>
+      <IconClose onClick={onClick} />
     </HeaderInternal>
     <ProfileUser />
   </AboutWrapper>

@@ -14,11 +14,11 @@ const Wrapper = styled.nav`
   padding: 2em 0;
 `
 
-const Header = () => (
+const Header = ({ onClick }) => (
   <Wrapper>
     <Logo />
-    <AboutLink>About</AboutLink>
-    <Menu />
+    <AboutLink onClick={onClick} >About</AboutLink>
+    <Menu onClick={onClick} />
   </Wrapper>
 )
 
