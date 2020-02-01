@@ -5,7 +5,7 @@
  "workbench.colorTheme": "Dracula",
  "editor.fontSize": 16,
  "editor.minimap.enabled": false,
- "editor.tabSize": 1,
+ "editor.tabSize": 2,
  "[html]": {
   "editor.defaultFormatter": "esbenp.prettier-vscode"
  },
