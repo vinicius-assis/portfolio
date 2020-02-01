@@ -34,7 +34,7 @@ const Label = styled.label.attrs({
     display: inline-block;
     width: 20px;
     height: 20px;
-    border-radius: var(--spaing-radius);
+    border-radius: var(--spacing-radius);
     border: 3px solid var(--color-fourth);
     box-sizing: border-box;
     cursor: pointer;
