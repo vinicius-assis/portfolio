@@ -5,6 +5,7 @@ import Logo from '../Logo'
 import AboutLink from '../AboutLink'
 import IconClose from '../IconClose'
 import HeaderInternal from '../../components/HeaderInternal'
+import AvatarProfile from '../AvatarProfile'
 
 const AboutWrapper = styled.article`
   background-color: var(--color-negative);
@@ -22,6 +23,7 @@ const About = () => (
       <AboutLink light> About </AboutLink>
       <IconClose />
     </HeaderInternal>
+    <AvatarProfile />
   </AboutWrapper>
 )
 
