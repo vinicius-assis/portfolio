@@ -14,6 +14,8 @@ const AboutWrapper = styled.article`
   position: absolute;
   top: 0;
   left: 0;
+  transform: ${props => props.active ? 'translateX(0%)' : 'translateX(100%)'};
+  transition: transform 200ms linear;  
 `
 
 const About = () => (
