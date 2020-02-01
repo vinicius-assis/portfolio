@@ -2,9 +2,9 @@ import React from 'react'
 
 import GlobalStyle from './style/generic/general'
 import Header from './components/Header'
-import About from './objects/About'
 import Board from './objects/Board'
 import Input from './objects/Input'
+import About from './objects/About'
 
 const App = () => (
   <>

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Logo from '../Logo'
 import AboutLink from '../AboutLink'
 import IconClose from '../IconClose'
+import HeaderInternal from '../../components/HeaderInternal'
 
 const AboutWrapper = styled.article`
   background-color: var(--color-negative);
@@ -16,9 +17,11 @@ const AboutWrapper = styled.article`
 
 const About = () => (
   <AboutWrapper>
-    <Logo light />
-    <AboutLink light> About </AboutLink>
-    <IconClose />
+    <HeaderInternal>
+      <Logo light />
+      <AboutLink light> About </AboutLink>
+      <IconClose />
+    </HeaderInternal>
   </AboutWrapper>
 )
 

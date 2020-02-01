@@ -18,7 +18,7 @@ const Close = styled.a`
     width: 32px;
     height: 4px;
     background-color: var(--color-zero);
-    border-radius: 2px;
+    border-radius: var(--spacing-radius-small);
     position: absolute;
     top: -1px;
   }

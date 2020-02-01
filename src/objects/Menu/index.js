@@ -5,7 +5,7 @@ const Center = styled.span`
   display: block;
   width: 100%;
   height: 4px;
-  border-radius: 2px;
+  border-radius: var(--spacing-radius-small);
   background-color: var(--color-fourth);
   margin-bottom: 5px;
 `
@@ -21,7 +21,7 @@ const Menu = styled.a.attrs({ title: 'Menu' })`
     display: block;
     width: 100%;
     height: 4px;
-    border-radius: 2px;
+    border-radius: var(--spacing-radius-small);
     background-color: var(--color-fourth);
   }
 

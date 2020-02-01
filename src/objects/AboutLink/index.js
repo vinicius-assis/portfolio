@@ -4,7 +4,7 @@ const AboutLink = styled.a`
   font-size: 1.4rem;
   font-weight: bold;
   margin-left: auto;
-  margin-right: 10px;
+  margin-right: var(--spacing-small);
   ${props => (props.light ? 'color: var(--color-zero)' : '')}
 `
 
