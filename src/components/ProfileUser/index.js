@@ -2,6 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 import AvatarProfile from '../../objects/AvatarProfile'
+import IconSocial from '../../objects/IconSocial'
+
+import Github from '../../img/github.png'
+import Linkedin from '../../img/linkedin.png'
+import Facebook from '../../img/facebook.png'
+import Twitter from '../../img/twitter.png'
+import Instagram from '../../img/instagram.png'
+
 
 const ProfileWrapper = styled.dl`
   color: var(--color-zero);
@@ -35,6 +43,13 @@ const ProfileUser = () => (
     Javascript lover and all your ecosystem.
       <br />
       Front-end Developer at Akredito
+    </dd>
+    <dd>
+      <IconSocial social={Github} alt="Logo da Github" />
+      <IconSocial social={Linkedin} alt="Logo da Linkedin" />
+      <IconSocial social={Facebook} alt="Logo da Facebook" />
+      <IconSocial social={Twitter} alt="Logo da Twitter" />
+      <IconSocial social={Instagram} alt="Logo da Instagram" />
     </dd>
   </ProfileWrapper>
 )
