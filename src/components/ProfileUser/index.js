@@ -28,7 +28,16 @@ const ProfileWrapper = styled.dl`
     width: 80%;
     margin: 0 auto;
     font-size: var(--size-small);
+    line-height: 1.8;
   }
+
+  & > .socials {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0 auto;
+  }
+
 `
 
 const ProfileUser = () => (
@@ -44,12 +53,12 @@ const ProfileUser = () => (
       <br />
       Front-end Developer at Akredito
     </dd>
-    <dd>
-      <IconSocial social={Github} alt="Logo da Github" />
-      <IconSocial social={Linkedin} alt="Logo da Linkedin" />
-      <IconSocial social={Facebook} alt="Logo da Facebook" />
-      <IconSocial social={Twitter} alt="Logo da Twitter" />
-      <IconSocial social={Instagram} alt="Logo da Instagram" />
+    <dd className="socials">
+      <IconSocial action="https://www.github.com/vinicius-assis" social={Github} alt="Logo da Github" />
+      <IconSocial action="https://www.linkedin.com/in/vin%C3%ADcius-de-oliveira-assis-655781ba/" social={Linkedin} alt="Logo da Linkedin" />
+      <IconSocial action="https://www.facebook.com/vinicius.assiis" social={Facebook} alt="Logo da Facebook" />
+      <IconSocial action="https://twitter.com/VinciusDev" social={Twitter} alt="Logo da Twitter" />
+      <IconSocial action="https://www.instagram.com/viniax/" social={Instagram} alt="Logo da Instagram" />
     </dd>
   </ProfileWrapper>
 )
