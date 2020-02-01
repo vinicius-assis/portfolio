@@ -5,11 +5,14 @@ import Header from './components/Header'
 import Board from './objects/Board'
 import Input from './objects/Input'
 import About from './objects/About'
+import MoveDisplay from './components/MoveDisplay'
 
 const App = () => {
   const [activeAbout, setActiveAbout] = useState(false)
+  const [show, setShow] = useState(false)
 
   const handleClick = () => activeAbout ? setActiveAbout(false) : setActiveAbout(true)
+  const showDisplay = () => show ? setShow(false) : setShow(true)
 
   return (
     <>
@@ -18,8 +21,20 @@ const App = () => {
 
       <Board />
 
-      <Input type="checkbox" content="Mostrar eventos" id="show" value="show" />
-      <About onClick={handleClick} active={activeAbout} />
+      <Input
+        type="checkbox"
+        content="Mostrar eventos"
+        id="show"
+        value="show"
+        onClick={showDisplay}
+      />
+
+      <MoveDisplay show={show} />
+
+      <About
+        onClick={handleClick}
+        active={activeAbout}
+      />
     </>
   )
 }

@@ -42,10 +42,10 @@ const Label = styled.label.attrs({
   }
 `
 
-const Input = ({ type, content, id, value }) => (
+const Input = ({ type, content, id, value, onClick }) => (
   <>
-    <Show input={type} id={id} value={value} />
-    <Label>{content}</Label>
+    <Show input={type} id={id} value={value} onClick={onClick} />
+    <Label >{content}</Label>
   </>
 )
 
