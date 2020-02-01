@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 
 const Center = styled.span`
@@ -8,9 +9,10 @@ const Center = styled.span`
   border-radius: var(--spacing-radius-small);
   background-color: var(--color-fourth);
   margin-bottom: 5px;
+  cursor: pointer;
 `
 
-const Menu = styled.a.attrs({ title: 'Menu' })`
+const MenuWrapper = styled.a.attrs({ title: 'Menu' })`
   display: block;
   width: 25px;
   text-indent: -9999px;
@@ -30,4 +32,12 @@ const Menu = styled.a.attrs({ title: 'Menu' })`
   }
 `
 
-export { Center, Menu }
+const Menu = () => (
+  <>
+    <MenuWrapper>
+      <Center />
+    </MenuWrapper>
+  </>
+)
+
+export default Menu

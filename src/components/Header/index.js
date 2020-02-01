@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import Logo from '../../objects/Logo'
 import AboutLink from '../../objects/AboutLink'
-import { Menu, Center } from '../../objects/Menu'
+import Menu from '../../objects/Menu'
 
 const Wrapper = styled.nav`
   display: flex;
@@ -18,9 +18,7 @@ const Header = () => (
   <Wrapper>
     <Logo />
     <AboutLink>About</AboutLink>
-    <Menu>
-      <Center />
-    </Menu>
+    <Menu />
   </Wrapper>
 )
 
