@@ -3,7 +3,13 @@ import styled from 'styled-components'
 
 import AvatarProfile from '../../objects/AvatarProfile'
 
-const ProfileWrapper = styled.dl``
+const ProfileWrapper = styled.dl`
+  color: var(--color-zero);
+  & > dt {
+    font-size: var(--size-big);
+    font-weight: bold;
+  }
+`
 
 const ProfileUser = () => (
   <ProfileWrapper>
