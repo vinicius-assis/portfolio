@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import GlobalStyle from './style/generic/general'
-import Header from './components/Header'
+import HeaderGame from './components/HeaderGame'
 import BoardGame from './objects/BoardGame'
 import InputGame from './objects/InputGame'
 import LayerDark from './objects/LayerDark'
@@ -17,7 +17,7 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Header onClick={handleClick} />
+      <HeaderGame onClick={handleClick} />
 
       <BoardGame />
 

@@ -14,7 +14,7 @@ const Wrapper = styled.nav`
   padding: 2em 0;
 `
 
-const Header = ({ onClick }) => (
+const HeaderGame = ({ onClick }) => (
   <Wrapper>
     <LogoGame />
     <AboutLink onClick={onClick} >About</AboutLink>
@@ -22,4 +22,4 @@ const Header = ({ onClick }) => (
   </Wrapper>
 )
 
-export default Header
+export default HeaderGame
