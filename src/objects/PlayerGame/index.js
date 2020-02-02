@@ -15,7 +15,7 @@ const Button = styled.button`
 
 const PlayerGame = ({ player }) => (
   <Button>
-    <Image img={player} />
+    {player && <Image img={player} />}
   </Button>
 )
 
