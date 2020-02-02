@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Span = styled.span`
+const Output = styled.output`
   display: block;
   margin: 0 auto 20px;
   width: 130px;
@@ -15,7 +15,7 @@ const Span = styled.span`
 
 const MovePlayer = ({ content }) => (
   <>
-    <Span>Adicionou {content}</Span>
+    <Output>Adicionou {content}</Output>
   </>
 )
 
