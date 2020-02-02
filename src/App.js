@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import GlobalStyle from './style/generic/general'
 import Header from './components/Header'
 import BoardGame from './objects/BoardGame'
-import Input from './objects/Input'
+import InputGame from './objects/InputGame'
 import LayerDark from './objects/LayerDark'
 import MoveDisplay from './components/MoveDisplay'
 
@@ -21,7 +21,7 @@ const App = () => {
 
       <BoardGame />
 
-      <Input
+      <InputGame
         type="checkbox"
         content="Mostrar eventos"
         id="show"

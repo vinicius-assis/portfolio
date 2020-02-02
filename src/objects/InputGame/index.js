@@ -42,11 +42,11 @@ const Label = styled.label.attrs({
   }
 `
 
-const Input = ({ type, content, id, value, onClick }) => (
+const InputGame = ({ type, content, id, value, onClick }) => (
   <>
     <Show input={type} id={id} value={value} onClick={onClick} />
     <Label >{content}</Label>
   </>
 )
 
-export default Input
+export default InputGame
