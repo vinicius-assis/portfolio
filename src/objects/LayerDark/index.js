@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Logo from '../Logo'
+import Logo from '../LogoGame'
 import AboutLink from '../AboutLink'
 import IconClose from '../IconClose'
 import HeaderInternal from '../../components/HeaderInternal'

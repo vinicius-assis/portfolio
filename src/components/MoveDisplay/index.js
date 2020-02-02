@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from "styled-components";
-import Move from '../../objects/Move';
+import MovePlayer from '../../objects/MovePlayer';
 
 const Wrapper = styled.section`
   width: 100%;
@@ -11,15 +11,15 @@ const Wrapper = styled.section`
 
 const MoveDisplay = ({ show }) => (
   <Wrapper active={show}>
-    <Move content='x' />
-    <Move content='x' />
-    <Move content='x' />
-    <Move content='x' />
-    <Move content='x' />
-    <Move content='x' />
-    <Move content='x' />
-    <Move content='x' />
-    <Move content='x' />
+    <MovePlayer content='x' />
+    <MovePlayer content='x' />
+    <MovePlayer content='x' />
+    <MovePlayer content='x' />
+    <MovePlayer content='x' />
+    <MovePlayer content='x' />
+    <MovePlayer content='x' />
+    <MovePlayer content='x' />
+    <MovePlayer content='x' />
   </Wrapper>
 )
 

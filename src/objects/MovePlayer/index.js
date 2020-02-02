@@ -13,10 +13,10 @@ const Span = styled.span`
   padding: 5px 20px;
 `
 
-const Move = ({ content }) => (
+const MovePlayer = ({ content }) => (
   <>
     <Span>Adicionou {content}</Span>
   </>
 )
 
-export default Move
+export default MovePlayer
