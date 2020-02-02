@@ -16,7 +16,7 @@ const Show = styled.input.attrs(props => ({
 `
 
 const Label = styled.label.attrs({
-  for: 'show'
+  htmlFor: 'show'
 })`
   display: inline-flex;
   align-items: center;
