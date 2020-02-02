@@ -12,10 +12,10 @@ const Wrapper = styled.article`
   padding: 15px;
 `
 
-const Board = () => (
+const BoardGame = () => (
   <Wrapper>
     <Field />
   </Wrapper>
 )
 
-export default Board
+export default BoardGame

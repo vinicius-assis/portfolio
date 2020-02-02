@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import GlobalStyle from './style/generic/general'
 import Header from './components/Header'
-import Board from './objects/Board'
+import BoardGame from './objects/BoardGame'
 import Input from './objects/Input'
 import LayerDark from './objects/LayerDark'
 import MoveDisplay from './components/MoveDisplay'
@@ -19,7 +19,7 @@ const App = () => {
       <GlobalStyle />
       <Header onClick={handleClick} />
 
-      <Board />
+      <BoardGame />
 
       <Input
         type="checkbox"
