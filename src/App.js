@@ -4,7 +4,7 @@ import GlobalStyle from './style/generic/general'
 import Header from './components/Header'
 import Board from './objects/Board'
 import Input from './objects/Input'
-import About from './objects/About'
+import LayerDark from './objects/LayerDark'
 import MoveDisplay from './components/MoveDisplay'
 
 const App = () => {
@@ -31,7 +31,7 @@ const App = () => {
 
       <MoveDisplay show={show} />
 
-      <About
+      <LayerDark
         onClick={handleClick}
         active={activeAbout}
       />

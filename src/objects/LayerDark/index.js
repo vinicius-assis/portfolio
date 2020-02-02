@@ -18,7 +18,7 @@ const AboutWrapper = styled.article`
   transition: transform 200ms linear;  
 `
 
-const About = ({ active, onClick }) => (
+const LayerDark = ({ active, onClick }) => (
   <AboutWrapper active={active}>
     <HeaderInternal>
       <Logo light />
@@ -29,4 +29,4 @@ const About = ({ active, onClick }) => (
   </AboutWrapper>
 )
 
-export default About
+export default LayerDark
