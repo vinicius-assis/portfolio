@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Player from '../../objects/Player'
+import PlayerGame from '../../objects/PlayerGame'
 
 const Grid = styled.ul`
   display: grid;
@@ -87,31 +87,31 @@ const Grid = styled.ul`
 const Field = () => (
   <Grid>
     <li className="grid-item">
-      <Player player="x" />
+      <PlayerGame player="x" />
     </li>
     <li className="grid-item">
-      <Player player="x" />
+      <PlayerGame player="x" />
     </li>
     <li className="grid-item">
-      <Player player="x" />
+      <PlayerGame player="x" />
     </li>
     <li className="grid-item">
-      <Player player="x" />
+      <PlayerGame player="x" />
     </li>
     <li className="grid-item">
-      <Player player="o" />
+      <PlayerGame player="o" />
     </li>
     <li className="grid-item">
-      <Player player="o" />
+      <PlayerGame player="o" />
     </li>
     <li className="grid-item">
-      <Player player="x" />
+      <PlayerGame player="x" />
     </li>
     <li className="grid-item">
-      <Player player="o" />
+      <PlayerGame player="o" />
     </li>
     <li className="grid-item">
-      <Player player="x" />
+      <PlayerGame player="x" />
     </li>
   </Grid>
 )

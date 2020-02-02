@@ -13,10 +13,10 @@ const Button = styled.button`
   border: none;
 `
 
-const Player = ({ player }) => (
+const PlayerGame = ({ player }) => (
   <Button>
     <Image img={player} />
   </Button>
 )
 
-export default Player
+export default PlayerGame
