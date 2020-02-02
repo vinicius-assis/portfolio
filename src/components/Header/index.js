@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import Logo from '../../objects/Logo'
 import AboutLink from '../../objects/AboutLink'
-import Menu from '../../objects/Menu'
+import MenuGame from '../../objects/MenuGame'
 
 const Wrapper = styled.nav`
   display: flex;
@@ -18,7 +18,7 @@ const Header = ({ onClick }) => (
   <Wrapper>
     <Logo />
     <AboutLink onClick={onClick} >About</AboutLink>
-    <Menu onClick={onClick} />
+    <MenuGame onClick={onClick} />
   </Wrapper>
 )
 

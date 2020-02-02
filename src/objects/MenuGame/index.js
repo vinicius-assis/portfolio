@@ -32,7 +32,7 @@ const Center = styled.span`
   margin-bottom: 5px;
 `
 
-const Menu = ({ onClick }) => (
+const MenuGame = ({ onClick }) => (
   <>
     <MenuWrapper onClick={onClick}>
       <Center />
@@ -40,4 +40,4 @@ const Menu = ({ onClick }) => (
   </>
 )
 
-export default Menu
+export default MenuGame
