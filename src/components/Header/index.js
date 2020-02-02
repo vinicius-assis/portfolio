@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Logo from '../../objects/Logo'
+import LogoGame from '../../objects/LogoGame'
 import AboutLink from '../../objects/AboutLink'
 import MenuGame from '../../objects/MenuGame'
 
@@ -16,7 +16,7 @@ const Wrapper = styled.nav`
 
 const Header = ({ onClick }) => (
   <Wrapper>
-    <Logo />
+    <LogoGame />
     <AboutLink onClick={onClick} >About</AboutLink>
     <MenuGame onClick={onClick} />
   </Wrapper>
