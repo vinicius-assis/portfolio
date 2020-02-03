@@ -9,9 +9,11 @@ const Image = styled.img.attrs(props => ({
 }))``
 
 const Button = styled.button`
+  flex-basis: 100%;
   background: none;
   border: none;
 `
+
 
 const PlayerGame = ({ player }) => (
   <Button>
