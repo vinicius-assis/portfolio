@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import PlayerGame from '../../objects/PlayerGame'
 
@@ -84,36 +84,36 @@ const Grid = styled.ul`
   }
 `
 
-const Field = () => (
-  <Grid>
-    <li className="grid-item">
-      <PlayerGame />
-    </li>
-    <li className="grid-item">
-      <PlayerGame />
-    </li>
-    <li className="grid-item">
-      <PlayerGame />
-    </li>
-    <li className="grid-item">
-      <PlayerGame />
-    </li>
-    <li className="grid-item">
-      <PlayerGame />
-    </li>
-    <li className="grid-item">
-      <PlayerGame />
-    </li>
-    <li className="grid-item">
-      <PlayerGame />
-    </li>
-    <li className="grid-item">
-      <PlayerGame />
-    </li>
-    <li className="grid-item">
-      <PlayerGame />
-    </li>
-  </Grid>
-)
+const Field = () => {
+  const [nextPlayer, setNextPlayer] = useState('x')
+  const [players, setPlayers] = useState([
+    { id: 1, content: '' },
+    { id: 2, content: '' },
+    { id: 3, content: '' },
+    { id: 4, content: '' },
+    { id: 5, content: '' },
+    { id: 6, content: '' },
+    { id: 7, content: '' },
+    { id: 8, content: '' },
+    { id: 9, content: '' }])
+
+  const handleClick = (id) => {
+    setPlayers(old => old.map(player => player.id === id ? { id, content: nextPlayer } : player))
+
+    setNextPlayer(old => old === 'x' ? 'o' : 'x')
+  }
+
+  return (
+    <Grid>
+
+      {players.map(player => (
+        <li key={player.id} className="grid-item" onClick={() => handleClick(player.id)}>
+          <PlayerGame id={player.id} player={player.content} />
+        </li>
+      ))}
+
+    </Grid>
+  )
+}
 
 export default Field

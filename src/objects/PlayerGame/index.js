@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import playerX from '../../img/X.png'
 import playerO from '../../img/Circle.png'
@@ -16,19 +16,12 @@ const Button = styled.button`
 `
 
 
-const PlayerGame = ({ player = false }) => {
-  const [playerState, setPlayerState] = useState(player)
+const PlayerGame = ({ player }) => (
+  <Button >
+    {player && <Image img={player} />}
+  </Button>
+)
 
-  const handleClick = () => !playerState
-    ? setPlayerState('x')
-    : playerState == 'x' ? setPlayerState('o') : ''
-
-  return (
-    <Button onClick={handleClick}>
-      {playerState && <Image img='x' />}
-    </Button>
-  )
-}
 
 
 export default PlayerGame
