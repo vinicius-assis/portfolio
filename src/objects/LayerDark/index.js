@@ -15,7 +15,7 @@ const AboutWrapper = styled.article`
   top: 0;
   left: 0;
   transform: ${props => props.active ? 'translateX(0%)' : 'translateX(100%)'};
-  transition: transform 200ms linear;  
+  transition: transform 800ms cubic-bezier(.65,-0.17,.38,1.54);  
 `
 
 const LayerDark = ({ active, onClick }) => (
