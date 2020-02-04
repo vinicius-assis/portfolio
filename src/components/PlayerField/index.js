@@ -106,9 +106,9 @@ const Field = () => {
   return (
     <Grid>
 
-      {players.map(player => (
-        <li key={player.id} className="grid-item" onClick={() => handleClick(player.id)}>
-          <PlayerGame id={player.id} player={player.content} />
+      {players.map(({ id, content }) => (
+        <li key={id} className="grid-item" onClick={() => handleClick(id)}>
+          <PlayerGame id={id} player={content} />
         </li>
       ))}
 
