@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
   color: var(--color-fourth);
   font-family: "Montserrat";
   font-size: 10px;
+  overflow-x: hidden;
   }
 
   ul, ol {
