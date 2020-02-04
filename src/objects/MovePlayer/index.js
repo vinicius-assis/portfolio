@@ -15,7 +15,7 @@ const Output = styled.output`
 
 const MovePlayer = ({ content }) => (
   <>
-    <Output>Adicionou {content}</Output>
+    <Output>{content}</Output>
   </>
 )
 

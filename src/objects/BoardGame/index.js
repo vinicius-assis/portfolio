@@ -12,9 +12,9 @@ const Wrapper = styled.article`
   padding: 15px;
 `
 
-const BoardGame = () => (
+const BoardGame = ({ callback }) => (
   <Wrapper>
-    <Field />
+    <Field callback={callback} />
   </Wrapper>
 )
 

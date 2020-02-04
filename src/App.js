@@ -10,16 +10,20 @@ import MoveDisplay from './components/MoveDisplay'
 const App = () => {
   const [activeAbout, setActiveAbout] = useState(false)
   const [show, setShow] = useState(false)
+  const [history, setHistory] = useState([])
 
   const handleClick = () => activeAbout ? setActiveAbout(false) : setActiveAbout(true)
   const showDisplay = () => show ? setShow(false) : setShow(true)
+  const addHistory = (player) => {
+    setHistory(old => [...old, `Adicionou ${player.toUpperCase()}`])
+  }
 
   return (
     <>
       <GlobalStyle />
       <HeaderGame onClick={handleClick} />
 
-      <BoardGame />
+      <BoardGame callback={addHistory} />
 
       <InputGame
         type="checkbox"
@@ -29,7 +33,7 @@ const App = () => {
         onClick={showDisplay}
       />
 
-      <MoveDisplay show={show} />
+      <MoveDisplay show={show} history={history} />
 
       <LayerDark
         onClick={handleClick}

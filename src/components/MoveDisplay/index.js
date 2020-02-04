@@ -9,17 +9,9 @@ const Wrapper = styled.section`
   transition: transform 0.5s cubic-bezier(.65,-0.17,.38,1.54);
 `
 
-const MoveDisplay = ({ show }) => (
+const MoveDisplay = ({ show, history }) => (
   <Wrapper active={show}>
-    <MovePlayer content='x' />
-    <MovePlayer content='x' />
-    <MovePlayer content='x' />
-    <MovePlayer content='x' />
-    <MovePlayer content='x' />
-    <MovePlayer content='x' />
-    <MovePlayer content='x' />
-    <MovePlayer content='x' />
-    <MovePlayer content='x' />
+    {history.map(item => (<MovePlayer content={item} />))}
   </Wrapper>
 )
 
