@@ -87,31 +87,31 @@ const Grid = styled.ul`
 const Field = () => (
   <Grid>
     <li className="grid-item">
-      <PlayerGame player="x" />
+      <PlayerGame />
     </li>
     <li className="grid-item">
-      <PlayerGame player="x" />
+      <PlayerGame />
     </li>
     <li className="grid-item">
-      <PlayerGame player="x" />
+      <PlayerGame />
     </li>
     <li className="grid-item">
-      <PlayerGame player="x" />
+      <PlayerGame />
     </li>
     <li className="grid-item">
-      <PlayerGame player="o" />
+      <PlayerGame />
     </li>
     <li className="grid-item">
-      <PlayerGame player="o" />
+      <PlayerGame />
     </li>
     <li className="grid-item">
-      <PlayerGame player="x" />
+      <PlayerGame />
     </li>
     <li className="grid-item">
-      <PlayerGame player="o" />
+      <PlayerGame />
     </li>
     <li className="grid-item">
-      <PlayerGame player="x" />
+      <PlayerGame />
     </li>
   </Grid>
 )
