@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import image from '../../img/logo.png'
 import imageLight from '../../img/logo-light.png'
