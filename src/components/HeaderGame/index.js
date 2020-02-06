@@ -12,6 +12,14 @@ const Wrapper = styled.nav`
   align-items: center;
   margin: 0 auto 85px;
   padding: 2em 0;
+
+  @media (min-width: 740px) {
+    width: 100%;
+    background-color: var(--color-tenth);
+    margin: 0 0 85px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 `
 
 const HeaderGame = ({ onClick }) => (
