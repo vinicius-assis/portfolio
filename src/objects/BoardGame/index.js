@@ -10,6 +10,8 @@ const Wrapper = styled.article`
   border-radius: var(--spacing-radius);
   box-shadow: 0 3px 6px 0 var(--color-light-negative);
   padding: 15px;
+  max-width: 330px;
+  max-height: 330px;
 `
 
 const BoardGame = ({ callback }) => (
