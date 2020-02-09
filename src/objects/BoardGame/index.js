@@ -12,6 +12,10 @@ const Wrapper = styled.article`
   padding: 15px;
   max-width: 330px;
   max-height: 330px;
+
+  @media (min-width: 740px) {
+    margin-right: 40px;
+  }
 `
 
 const BoardGame = ({ callback }) => (

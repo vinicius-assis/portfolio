@@ -42,6 +42,12 @@ const Label = styled.label.attrs({
     cursor: pointer;
     margin-right: 0.5em;
   }
+
+  @media (min-width: 740px) {
+    position: absolute;
+    left: 0;
+    top: 370px;
+  }
 `
 
 const InputGame = ({ type, content, id, value, onClick }) => (

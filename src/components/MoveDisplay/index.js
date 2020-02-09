@@ -3,10 +3,14 @@ import styled from "styled-components";
 import MovePlayer from '../../objects/MovePlayer';
 
 const Wrapper = styled.section`
-  width: 100%;
   margin-top: 50px;
-  transform: ${props => props.active ? 'translateX(0)' : 'translateX(100%)'};
+  ${props => props.active ? 'transform: translateX(0)' : 'transform:translateX(1000%); position:absolute'};
   transition: transform 0.5s cubic-bezier(.65,-0.17,.38,1.54);
+
+  @media (min-width: 740px) {
+    margin-top: 0;
+    transition: transform 0.5s linear;
+  }
 `
 
 const MoveDisplay = ({ show, history }) => (
