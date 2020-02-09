@@ -13,6 +13,10 @@ const Button = styled.button`
   background: none;
   border: none;
   cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-second);
+  }
 `
 
 
