@@ -14,9 +14,6 @@ import Instagram from '../../img/instagram.png'
 const ProfileWrapper = styled.dl`
   color: var(--color-zero);
   margin-top: var(--spacing-very-big);
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
 
   & > .avatar {
     margin-bottom: var(--spacing-medium);
@@ -38,18 +35,7 @@ const ProfileWrapper = styled.dl`
     display: flex;
     justify-content: space-between;
     width: 70%;
-    max-width: 270px;
     margin: 0 auto;
-  }
-
-  @media (min-width: 740px) {
-    & > .title {
-      font-size: var(--size-very-big);
-    }
-    & > .description {
-      font-size: var(--size-medium);
-      line-height: 24px;
-    }
   }
 
 `

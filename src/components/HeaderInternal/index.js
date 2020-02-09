@@ -4,8 +4,7 @@ const HeaderInternal = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto 85px;
-  padding: 2em 0;
+  padding: var(--spacing-medium) var(--spacing-big)
 `
 
 export default HeaderInternal
