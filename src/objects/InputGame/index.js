@@ -18,7 +18,9 @@ const Show = styled.input.attrs(props => ({
 const Label = styled.label.attrs({
   htmlFor: 'show'
 })`
+  width: 100%;
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   margin-top: 4em;
   font-size: var(--size-small);
