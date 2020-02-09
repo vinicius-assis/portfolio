@@ -6,6 +6,7 @@ import BoardGame from './objects/BoardGame'
 import InputGame from './objects/InputGame'
 import LayerDark from './objects/LayerDark'
 import MoveDisplay from './components/MoveDisplay'
+import GameWrapper from './components/GameWrapper'
 
 const App = () => {
   const [activeAbout, setActiveAbout] = useState(false)
@@ -23,17 +24,20 @@ const App = () => {
       <GlobalStyle />
       <HeaderGame onClick={handleClick} />
 
-      <BoardGame callback={addHistory} />
+      <GameWrapper>
+        <BoardGame callback={addHistory} />
 
-      <InputGame
-        type="checkbox"
-        content="Mostrar eventos"
-        id="show"
-        value="show"
-        onClick={showDisplay}
-      />
+        <InputGame
+          type="checkbox"
+          content="Mostrar eventos"
+          id="show"
+          value="show"
+          onClick={showDisplay}
+        />
 
-      <MoveDisplay show={show} history={history} />
+        <MoveDisplay show={show} history={history} />
+
+      </GameWrapper>
 
       <LayerDark
         onClick={handleClick}
