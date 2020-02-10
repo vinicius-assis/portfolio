@@ -105,7 +105,6 @@ const Field = ({ callback }) => {
   ])
 
   const handleClick = (id) => {
-    // setPlayers(old => old.map(player => player.id === id ? { id, content: nextPlayer } : player))
     setHistory(old => [...old, {
       round: round + 1,
       state: old[round].state.map(player => player.id === id ? { id, content: nextPlayer } : player)
@@ -116,11 +115,6 @@ const Field = ({ callback }) => {
     callback(nextPlayer)
     setNextPlayer(old => old === 'x' ? 'o' : 'x')
   }
-
-  // const changeHistory = () => {
-  //   setHistory(old => [...old, players])
-  //   console.log(history)
-  // }
 
   return (
     <Grid>
