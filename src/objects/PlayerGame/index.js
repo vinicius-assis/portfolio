@@ -22,7 +22,7 @@ const Button = styled.button`
 
 
 const PlayerGame = ({ player }) => (
-  <Button >
+  <Button>
     {player && <Image img={player} />}
   </Button>
 )

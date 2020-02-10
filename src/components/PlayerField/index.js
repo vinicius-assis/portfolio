@@ -86,27 +86,46 @@ const Grid = styled.ul`
 
 const Field = ({ callback }) => {
   const [nextPlayer, setNextPlayer] = useState('x')
-  const [players, setPlayers] = useState([
-    { id: 1, content: '' },
-    { id: 2, content: '' },
-    { id: 3, content: '' },
-    { id: 4, content: '' },
-    { id: 5, content: '' },
-    { id: 6, content: '' },
-    { id: 7, content: '' },
-    { id: 8, content: '' },
-    { id: 9, content: '' }])
+  const [round, setRound] = useState(0)
+  const [history, setHistory] = useState([
+    {
+      round: 0,
+      state: [
+        { id: 1, content: '' },
+        { id: 2, content: '' },
+        { id: 3, content: '' },
+        { id: 4, content: '' },
+        { id: 5, content: '' },
+        { id: 6, content: '' },
+        { id: 7, content: '' },
+        { id: 8, content: '' },
+        { id: 9, content: '' }
+      ]
+    }
+  ])
 
   const handleClick = (id) => {
-    setPlayers(old => old.map(player => player.id === id ? { id, content: nextPlayer } : player))
+    // setPlayers(old => old.map(player => player.id === id ? { id, content: nextPlayer } : player))
+    setHistory(old => [...old, {
+      round: round + 1,
+      state: old[round].state.map(player => player.id === id ? { id, content: nextPlayer } : player)
+    }])
+
+    setRound(old => old + 1)
+
     callback(nextPlayer)
     setNextPlayer(old => old === 'x' ? 'o' : 'x')
   }
 
+  // const changeHistory = () => {
+  //   setHistory(old => [...old, players])
+  //   console.log(history)
+  // }
+
   return (
     <Grid>
 
-      {players.map(({ id, content }) => (
+      {history[round].state.map(({ id, content }) => (
         <li key={id} className="grid-item" onClick={() => content === '' && handleClick(id)}>
           <PlayerGame id={id} player={content} />
         </li>
