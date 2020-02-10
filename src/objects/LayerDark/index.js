@@ -12,8 +12,6 @@ const AboutWrapper = styled.article`
   width: 100vw;
   height: 100vh;
   position: absolute;
-  padding-right: 5%;
-  padding-left: 5%;
   top: 0;
   left: 0;
   transform: ${props => props.active ? 'translateX(0%)' : 'translateX(100%)'};
