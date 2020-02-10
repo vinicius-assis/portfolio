@@ -84,12 +84,30 @@ const Grid = styled.ul`
   }
 `
 
-const Field = ({ onClick, players }) => {
+const Field = ({ callback }) => {
+  const [nextPlayer, setNextPlayer] = useState('x')
+  const [players, setPlayers] = useState([
+    { id: 1, content: '' },
+    { id: 2, content: '' },
+    { id: 3, content: '' },
+    { id: 4, content: '' },
+    { id: 5, content: '' },
+    { id: 6, content: '' },
+    { id: 7, content: '' },
+    { id: 8, content: '' },
+    { id: 9, content: '' }])
+
+  const handleClick = (id) => {
+    setPlayers(old => old.map(player => player.id === id ? { id, content: nextPlayer } : player))
+    callback(nextPlayer)
+    setNextPlayer(old => old === 'x' ? 'o' : 'x')
+  }
+
   return (
     <Grid>
 
       {players.map(({ id, content }) => (
-        <li key={id} className="grid-item" onClick={() => content === '' && onClick(id)}>
+        <li key={id} className="grid-item" onClick={() => content === '' && handleClick(id)}>
           <PlayerGame id={id} player={content} />
         </li>
       ))}
