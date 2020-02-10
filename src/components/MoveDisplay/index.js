@@ -8,6 +8,8 @@ const Wrapper = styled.section`
   transition: transform 0.5s cubic-bezier(.65,-0.17,.38,1.54);
 
   @media (min-width: 740px) {
+    position:absolute;
+    left: 100%;
     margin-top: 0;
     transition: transform 0.5s linear;
   }

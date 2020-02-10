@@ -25,7 +25,7 @@ const App = () => {
       <HeaderGame onClick={handleClick} />
 
       <GameWrapper>
-        <BoardGame callback={addHistory} />
+        <BoardGame callback={addHistory} show={show} />
 
         <InputGame
           type="checkbox"

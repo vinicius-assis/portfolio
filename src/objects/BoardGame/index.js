@@ -14,12 +14,13 @@ const Wrapper = styled.article`
   max-height: 330px;
 
   @media (min-width: 740px) {
-    margin-right: 40px;
+    transform: ${props => props.show ? 'translateX(-50px)' : 'translateX(0)'};
+    transition: transform .15s linear;
   }
 `
 
-const BoardGame = ({ callback }) => (
-  <Wrapper>
+const BoardGame = ({ callback, show }) => (
+  <Wrapper show={show}>
     <Field callback={callback} />
   </Wrapper>
 )
