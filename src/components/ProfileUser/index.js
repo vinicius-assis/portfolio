@@ -14,6 +14,8 @@ import Instagram from '../../img/instagram.png'
 const ProfileWrapper = styled.dl`
   color: var(--color-zero);
   margin-top: var(--spacing-very-big);
+  max-width: 500px;
+  margin: var(--spacing-very-big) auto 0;
 
   & > .avatar {
     margin-bottom: var(--spacing-medium);
