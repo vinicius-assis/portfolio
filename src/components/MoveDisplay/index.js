@@ -15,9 +15,9 @@ const Wrapper = styled.section`
   }
 `
 
-const MoveDisplay = ({ show, history }) => (
+const MoveDisplay = ({ show, history, action }) => (
   <Wrapper active={show}>
-    {history.map((item, index) => (<MovePlayer content={item} key={index} />))}
+    {history.map((item, index) => (<MovePlayer content={item} key={index} action={action} />))}
   </Wrapper>
 )
 

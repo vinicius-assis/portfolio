@@ -11,11 +11,15 @@ const Output = styled.output`
   color: var(--color-negative);
   background-color: var(--color-zero);
   padding: 5px 20px;
+  
+  &:not(:first-child) {
+    cursor: pointer;
+  }
 `
 
-const MovePlayer = ({ content }) => (
+const MovePlayer = ({ content, action }) => (
   <>
-    <Output>{content}</Output>
+    <Output onClick={action}>{content}</Output>
   </>
 )
 

@@ -11,13 +11,15 @@ import GameWrapper from './components/GameWrapper'
 const App = () => {
   const [activeAbout, setActiveAbout] = useState(false)
   const [show, setShow] = useState(false)
-  const [history, setHistory] = useState([])
+  const [history, setHistory] = useState(['Start'])
 
   const handleClick = () => activeAbout ? setActiveAbout(false) : setActiveAbout(true)
   const showDisplay = () => show ? setShow(false) : setShow(true)
   const addHistory = (player) => {
     setHistory(old => [...old, `Adicionou ${player.toUpperCase()}`])
   }
+
+  const changeHistory = () => console.log('CLicou!')
 
   return (
     <>
@@ -35,7 +37,7 @@ const App = () => {
           onClick={showDisplay}
         />
 
-        <MoveDisplay show={show} history={history} />
+        <MoveDisplay show={show} history={history} action={changeHistory} />
 
       </GameWrapper>
 
