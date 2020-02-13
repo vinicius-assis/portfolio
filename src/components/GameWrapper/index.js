@@ -20,13 +20,49 @@ const GameWrapper = () => {
   const [history, setHistory] = useState(['Start'])
   const [show, setShow] = useState(false)
 
+  const [nextPlayer, setNextPlayer] = useState('x')
+  const [round, setRound] = useState(0)
+
+  const [historyGame, setHistoryGame] = useState([
+    {
+      round: 0,
+      state: [
+        { id: 1, content: '' },
+        { id: 2, content: '' },
+        { id: 3, content: '' },
+        { id: 4, content: '' },
+        { id: 5, content: '' },
+        { id: 6, content: '' },
+        { id: 7, content: '' },
+        { id: 8, content: '' },
+        { id: 9, content: '' }
+      ]
+    }
+  ])
+
   const showDisplay = () => show ? setShow(false) : setShow(true)
   const addHistory = (player) => setHistory(old => [...old, `Adicionou ${player.toUpperCase()}`])
-  const changeHistory = (key) => setHistory(old => old.slice(0, ++key))
+  const changeHistory = (key) => {
+    setRound(key)
+    setHistory(old => old.slice(0, ++key))
+    setHistoryGame(old => old.slice(0, ++key))
+  }
+
+  const handleClick = (id) => {
+    setHistoryGame(old => [...old, {
+      round: round + 1,
+      state: old[round].state.map(player => player.id === id ? { id, content: nextPlayer } : player)
+    }])
+
+    setRound(old => old + 1)
+
+    addHistory(nextPlayer)
+    setNextPlayer(old => old === 'x' ? 'o' : 'x')
+  }
 
   return (
     <Wrapper>
-      <BoardGame action={addHistory} show={show} />
+      <BoardGame show={show} historyGame={historyGame} onClick={handleClick} round={round} />
 
       <InputGame
         type="checkbox"

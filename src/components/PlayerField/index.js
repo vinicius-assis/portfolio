@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import PlayerGame from '../../objects/PlayerGame'
 
@@ -84,49 +84,16 @@ const Grid = styled.ul`
   }
 `
 
-const Field = ({ callback }) => {
-  const [nextPlayer, setNextPlayer] = useState('x')
-  const [round, setRound] = useState(0)
-  const [history, setHistory] = useState([
-    {
-      round: 0,
-      state: [
-        { id: 1, content: '' },
-        { id: 2, content: '' },
-        { id: 3, content: '' },
-        { id: 4, content: '' },
-        { id: 5, content: '' },
-        { id: 6, content: '' },
-        { id: 7, content: '' },
-        { id: 8, content: '' },
-        { id: 9, content: '' }
-      ]
-    }
-  ])
+const Field = ({ historyGame, onClick, round }) => (
+  <Grid>
 
-  const handleClick = (id) => {
-    setHistory(old => [...old, {
-      round: round + 1,
-      state: old[round].state.map(player => player.id === id ? { id, content: nextPlayer } : player)
-    }])
+    {historyGame[round].state.map(({ id, content }) => (
+      <li key={id} className="grid-item" onClick={() => content === '' && onClick(id)}>
+        <PlayerGame id={id} player={content} />
+      </li>
+    ))}
 
-    setRound(old => old + 1)
-
-    callback(nextPlayer)
-    setNextPlayer(old => old === 'x' ? 'o' : 'x')
-  }
-
-  return (
-    <Grid>
-
-      {history[round].state.map(({ id, content }) => (
-        <li key={id} className="grid-item" onClick={() => content === '' && handleClick(id)}>
-          <PlayerGame id={id} player={content} />
-        </li>
-      ))}
-
-    </Grid>
-  )
-}
+  </Grid>
+)
 
 export default Field

@@ -19,9 +19,9 @@ const Wrapper = styled.article`
   }
 `
 
-const BoardGame = ({ action, show }) => (
+const BoardGame = ({ show, historyGame, onClick, round }) => (
   <Wrapper show={show}>
-    <Field callback={action} />
+    <Field historyGame={historyGame} onClick={onClick} round={round} />
   </Wrapper>
 )
 
