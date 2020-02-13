@@ -50,9 +50,9 @@ const Label = styled.label.attrs({
   }
 `
 
-const InputGame = ({ type, content, id, value, onClick }) => (
+const InputGame = ({ type, content, id, value, action }) => (
   <>
-    <Show input={type} id={id} value={value} onClick={onClick} />
+    <Show input={type} id={id} value={value} onClick={action} />
     <Label >{content}</Label>
   </>
 )
