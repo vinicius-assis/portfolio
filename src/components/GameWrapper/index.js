@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 import BoardGame from '../../objects/BoardGame'
@@ -19,6 +19,8 @@ const Wrapper = styled.div`
 const GameWrapper = () => {
   const [history, setHistory] = useState(['Start'])
   const [show, setShow] = useState(false)
+  const [playerX, setPlayerX] = useState([])
+  const [playerO, setPlayerO] = useState([])
 
   const [nextPlayer, setNextPlayer] = useState('x')
   const [round, setRound] = useState(0)
@@ -40,6 +42,29 @@ const GameWrapper = () => {
     }
   ])
 
+  const checkWinner = () => {
+    let possibleWaysToWin = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9],
+      [1, 4, 7],
+      [2, 5, 8],
+      [3, 6, 9],
+      [1, 5, 9],
+      [3, 5, 7]
+    ]
+
+    possibleWaysToWin.forEach(item => {
+      if (JSON.stringify(item) === JSON.stringify(playerX.sort())) {
+        console.log('Player X venceu!')
+        setHistory(old => [...old, 'X venceu!'])
+      } else if (JSON.stringify(item) === JSON.stringify(playerO.sort())) {
+        console.log('Player O venceu!')
+        setHistory(old => [...old, 'O venceu!'])
+      }
+    })
+  }
+
   const showDisplay = () => show ? setShow(false) : setShow(true)
   const addHistory = (player) => setHistory(old => [...old, `Adicionou ${player.toUpperCase()}`])
   const changeHistory = (key) => {
@@ -55,10 +80,17 @@ const GameWrapper = () => {
     }])
 
     setRound(old => old + 1)
-
     addHistory(nextPlayer)
     setNextPlayer(old => old === 'x' ? 'o' : 'x')
+
+    if (nextPlayer === 'x') {
+      setPlayerX(old => [...old, id])
+    } else if (nextPlayer === 'o') {
+      setPlayerO(old => [...old, id])
+    }
   }
+
+  useEffect(() => checkWinner(), [playerX, playerO])
 
   return (
     <Wrapper>
