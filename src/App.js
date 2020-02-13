@@ -19,7 +19,9 @@ const App = () => {
     setHistory(old => [...old, `Adicionou ${player.toUpperCase()}`])
   }
 
-  const changeHistory = () => console.log('CLicou!')
+  const changeHistory = (key) => {
+    setHistory(old => old.slice(0, ++key))
+  }
 
   return (
     <>
