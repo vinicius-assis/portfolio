@@ -11,7 +11,7 @@ const Output = styled.output`
   color: var(--color-negative);
   background-color: var(--color-zero);
   padding: 5px 20px; 
-  cursor: pointer;
+  ${props => props.disabled ? '' : 'cursor: pointer;'}
 
   ${props => props.disabled ? '&:last-child {background-color: green; color: var(--color-zero)}' : ''}
 `
