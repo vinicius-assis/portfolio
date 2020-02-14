@@ -12,6 +12,8 @@ const Output = styled.output`
   background-color: var(--color-zero);
   padding: 5px 20px; 
   cursor: pointer;
+
+  ${props => props.disabled ? '&:last-child {background-color: green; color: var(--color-zero)}' : ''}
 `
 
 const MovePlayer = ({ content, data, action, disabled }) => (

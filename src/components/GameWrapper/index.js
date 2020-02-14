@@ -43,7 +43,7 @@ const GameWrapper = () => {
     }
   ])
 
-  const checkWinner = () => {
+  useEffect(() => {
     let possibleWaysToWin = [
       [1, 2, 3],
       [4, 5, 6],
@@ -64,7 +64,8 @@ const GameWrapper = () => {
         setDisabled(true)
       }
     })
-  }
+  }, [playerO, playerX]
+  )
 
   const showDisplay = () => show ? setShow(false) : setShow(true)
   const addHistory = (player) => setHistory(old => [...old, `Adicionou ${player.toUpperCase()}`])
@@ -90,8 +91,6 @@ const GameWrapper = () => {
       setPlayerO(old => [...old, id])
     }
   }
-
-  useEffect(() => checkWinner(), [playerX, playerO])
 
   return (
     <Wrapper>
