@@ -84,12 +84,12 @@ const Grid = styled.ul`
   }
 `
 
-const Field = ({ historyGame, onClick, round }) => (
+const Field = ({ historyGame, onClick, round, disabled }) => (
   <Grid>
 
     {historyGame[round].state.map(({ id, content }) => (
       <li key={id} className="grid-item" onClick={() => content === '' && onClick(id)}>
-        <PlayerGame id={id} player={content} />
+        <PlayerGame id={id} player={content} disabled={disabled} />
       </li>
     ))}
 

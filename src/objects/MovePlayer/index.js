@@ -14,9 +14,13 @@ const Output = styled.output`
   cursor: pointer;
 `
 
-const MovePlayer = ({ content, data, action }) => (
+const MovePlayer = ({ content, data, action, disabled }) => (
   <>
-    <Output onClick={() => action(data)}>{content}</Output>
+    <Output disabled={disabled} onClick={() => {
+      if (!disabled) {
+        action(data)
+      }
+    }}>{content}</Output>
   </>
 )
 

@@ -5,7 +5,8 @@ import playerO from '../../img/Circle.png'
 
 const Image = styled.img.attrs(props => ({
   src: props.img === 'x' ? playerX : playerO,
-  alt: `Image of player ${props.img.toUpperCase()}`
+  alt: `Image of player ${props.img.toUpperCase()}`,
+  disabled: props.disabled
 }))``
 
 const Button = styled.button`
@@ -16,13 +17,13 @@ const Button = styled.button`
   transition: background-color 0.3s linear;
 
   &:hover {
-    background-color: var(--color-second);
+    ${props => props.disabled ? '' : 'background-color: var(--color-second);'}
   }
 `
 
 
-const PlayerGame = ({ player }) => (
-  <Button>
+const PlayerGame = ({ player, disabled }) => (
+  <Button disabled={disabled}>
     {player && <Image img={player} />}
   </Button>
 )

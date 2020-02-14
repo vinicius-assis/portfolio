@@ -21,6 +21,7 @@ const GameWrapper = () => {
   const [show, setShow] = useState(false)
   const [playerX, setPlayerX] = useState([])
   const [playerO, setPlayerO] = useState([])
+  const [disabled, setDisabled] = useState(false)
 
   const [nextPlayer, setNextPlayer] = useState('x')
   const [round, setRound] = useState(0)
@@ -56,11 +57,11 @@ const GameWrapper = () => {
 
     possibleWaysToWin.forEach(item => {
       if (JSON.stringify(item) === JSON.stringify(playerX.sort())) {
-        console.log('Player X venceu!')
         setHistory(old => [...old, 'X venceu!'])
+        setDisabled(true)
       } else if (JSON.stringify(item) === JSON.stringify(playerO.sort())) {
-        console.log('Player O venceu!')
         setHistory(old => [...old, 'O venceu!'])
+        setDisabled(true)
       }
     })
   }
@@ -94,7 +95,7 @@ const GameWrapper = () => {
 
   return (
     <Wrapper>
-      <BoardGame show={show} historyGame={historyGame} onClick={handleClick} round={round} />
+      <BoardGame show={show} historyGame={historyGame} onClick={handleClick} round={round} disabled={disabled} />
 
       <InputGame
         type="checkbox"
@@ -104,7 +105,7 @@ const GameWrapper = () => {
         action={showDisplay}
       />
 
-      <MoveDisplay show={show} history={history} action={changeHistory} />
+      <MoveDisplay show={show} history={history} action={changeHistory} disabled={disabled} />
     </Wrapper>
   )
 }
