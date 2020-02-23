@@ -43,6 +43,41 @@ const GameWrapper = () => {
     }
   ])
 
+  const showDisplay = () => show ? setShow(false) : setShow(true)
+  const addHistory = (player) => setHistory(old => [...old, `Adicionou ${player.toUpperCase()}`])
+  const changeHistory = (key) => {
+    setRound(key)
+    setHistory(old => old.slice(0, key + 1))
+    setHistoryGame(old => old.slice(0, key + 1))
+
+    if (key % 2 === 0) {
+      setNextPlayer('x')
+    } else {
+      setNextPlayer('o')
+    }
+  }
+
+  const handleClick = (id) => {
+    setHistoryGame(old => [...old, {
+      round: round + 1,
+      state: old[round].state.map(player => player.id === id ? { id, content: nextPlayer } : player)
+    }])
+
+    setRound(old => old + 1)
+    addHistory(nextPlayer)
+    setNextPlayer(old => old === 'x' ? 'o' : 'x')
+    checkPlayers()
+  }
+
+  const checkPlayers = () => {
+    const arrayX = historyGame[historyGame.length - 1].state.map(item => {
+      if (item.content === 'x' && playerX.indexOf(item.id) === -1) {
+        return item.id
+      }
+    })
+    setPlayerX(arrayX)
+  }
+
   useEffect(() => {
     let possibleWaysToWin = [
       [1, 2, 3],
@@ -64,33 +99,7 @@ const GameWrapper = () => {
         setDisabled(true)
       }
     })
-  }, [playerO, playerX]
-  )
-
-  const showDisplay = () => show ? setShow(false) : setShow(true)
-  const addHistory = (player) => setHistory(old => [...old, `Adicionou ${player.toUpperCase()}`])
-  const changeHistory = (key) => {
-    setRound(key)
-    setHistory(old => old.slice(0, ++key))
-    setHistoryGame(old => old.slice(0, ++key))
-  }
-
-  const handleClick = (id) => {
-    setHistoryGame(old => [...old, {
-      round: round + 1,
-      state: old[round].state.map(player => player.id === id ? { id, content: nextPlayer } : player)
-    }])
-
-    setRound(old => old + 1)
-    addHistory(nextPlayer)
-    setNextPlayer(old => old === 'x' ? 'o' : 'x')
-
-    if (nextPlayer === 'x') {
-      setPlayerX(old => [...old, id])
-    } else if (nextPlayer === 'o') {
-      setPlayerO(old => [...old, id])
-    }
-  }
+  }, [playerO, playerX])
 
   return (
     <Wrapper>
