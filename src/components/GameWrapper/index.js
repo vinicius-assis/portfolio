@@ -42,22 +42,29 @@ const GameWrapper = () => {
       ]
     }
   ])
-
+  // function to show and hide profile
   const showDisplay = () => show ? setShow(false) : setShow(true)
+  // function to set move display
   const addHistory = (player) => setHistory(old => [...old, `Adicionou ${player.toUpperCase()}`])
+  // function to back history, where key is equal item index
   const changeHistory = (key) => {
+    // change round every time when the history change
     setRound(key)
+    // remove history according with the key
     setHistory(old => old.slice(0, key + 1))
+    // remove historyGame according with the key
     setHistoryGame(old => old.slice(0, key + 1))
 
+    // set nextPlayer when back the history
     if (key % 2 === 0) {
       setNextPlayer('x')
     } else {
       setNextPlayer('o')
     }
   }
-
+  // function to add player in field
   const handleClick = (id) => {
+    // add last round and state in history game
     setHistoryGame(old => [...old, {
       round: round + 1,
       state: old[round].state.map(player => player.id === id ? { id, content: nextPlayer } : player)
@@ -67,22 +74,16 @@ const GameWrapper = () => {
     addHistory(nextPlayer)
     setNextPlayer(old => old === 'x' ? 'o' : 'x')
 
-    setPlayerX(historyGame[historyGame.length - 1].state.map(item => {
-      if (item.content === 'x') {
-        return item.id
-      }
-    }))
-    setPlayerO(historyGame[historyGame.length - 1].state.map(item => {
-      if (item.content === 'o') {
-        return item.id
-      }
-    }))
+    // Check the last history game and set playerX and playerO
+    setPlayerX(historyGame[historyGame.length - 1].state.map(item => item.content === 'x' ? item.id : ''))
+    setPlayerO(historyGame[historyGame.length - 1].state.map(item => item.content === 'o' ? item.id : ''))
   }
 
 
 
 
   useEffect(() => {
+    // Arrays with all possible ways to win
     const possibleWaysToWin = [
       [1, 2, 3],
       [4, 5, 6],
@@ -93,7 +94,7 @@ const GameWrapper = () => {
       [1, 5, 9],
       [3, 5, 7]
     ]
-
+    // function to check winner in the game
     possibleWaysToWin.forEach(possibles => {
       let countX = 0, countO = 0
 
