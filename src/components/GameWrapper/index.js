@@ -66,20 +66,24 @@ const GameWrapper = () => {
     setRound(old => old + 1)
     addHistory(nextPlayer)
     setNextPlayer(old => old === 'x' ? 'o' : 'x')
-    checkPlayers()
-  }
 
-  const checkPlayers = () => {
-    const arrayX = historyGame[historyGame.length - 1].state.map(item => {
-      if (item.content === 'x' && playerX.indexOf(item.id) === -1) {
+    setPlayerX(historyGame[historyGame.length - 1].state.map(item => {
+      if (item.content === 'x') {
         return item.id
       }
-    })
-    setPlayerX(arrayX)
+    }))
+    setPlayerO(historyGame[historyGame.length - 1].state.map(item => {
+      if (item.content === 'o') {
+        return item.id
+      }
+    }))
   }
 
+
+
+
   useEffect(() => {
-    let possibleWaysToWin = [
+    const possibleWaysToWin = [
       [1, 2, 3],
       [4, 5, 6],
       [7, 8, 9],
@@ -90,15 +94,22 @@ const GameWrapper = () => {
       [3, 5, 7]
     ]
 
-    possibleWaysToWin.forEach(item => {
-      if (JSON.stringify(item) === JSON.stringify(playerX.sort())) {
-        setHistory(old => [...old, 'X venceu!'])
+    possibleWaysToWin.forEach(possibles => {
+      let countX = 0, countO = 0
+
+      playerX.filter(item => possibles.includes(item) ? countX += 1 : '')
+
+      playerO.filter(item => possibles.includes(item) ? countO += 1 : '')
+
+      if (countO === 3) {
+        setHistory(old => [...old, 'O ganhou!'])
         setDisabled(true)
-      } else if (JSON.stringify(item) === JSON.stringify(playerO.sort())) {
-        setHistory(old => [...old, 'O venceu!'])
+      } else if (countX === 3) {
+        setHistory(old => [...old, 'X ganhou!'])
         setDisabled(true)
       }
     })
+
   }, [playerO, playerX])
 
   return (
