@@ -73,14 +73,13 @@ const GameWrapper = () => {
     setRound(old => old + 1)
     addHistory(nextPlayer)
     setNextPlayer(old => old === 'x' ? 'o' : 'x')
+  }
 
+  useEffect(() => {
     // Check the last history game and set playerX and playerO
     setPlayerX(historyGame[historyGame.length - 1].state.map(item => item.content === 'x' ? item.id : ''))
     setPlayerO(historyGame[historyGame.length - 1].state.map(item => item.content === 'o' ? item.id : ''))
-  }
-
-
-
+  }, [historyGame])
 
   useEffect(() => {
     // Arrays with all possible ways to win
