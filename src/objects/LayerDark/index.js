@@ -1,10 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Logo from '../LogoGame'
-import AboutLink from '../AboutLink'
-import IconClose from '../IconClose'
-import HeaderInternal from '../../components/HeaderInternal'
 import ProfileUser from '../../components/ProfileUser'
 
 const AboutWrapper = styled.article`
@@ -12,6 +8,7 @@ const AboutWrapper = styled.article`
   width: 100vw;
   height: 100vh;
   position: absolute;
+  padding-top: 5%;
   padding-right: 5%;
   padding-left: 5%;
   top: 0;
@@ -20,13 +17,8 @@ const AboutWrapper = styled.article`
   transition: transform 800ms cubic-bezier(.65,-0.17,.38,1.54);  
 `
 
-const LayerDark = ({ active, onClick }) => (
+const LayerDark = ({ active }) => (
   <AboutWrapper active={active}>
-    <HeaderInternal>
-      <Logo light />
-      <AboutLink light onClick={onClick}> About </AboutLink>
-      <IconClose onClick={onClick} />
-    </HeaderInternal>
     <ProfileUser />
   </AboutWrapper>
 )

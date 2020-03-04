@@ -13,7 +13,7 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
-      <HeaderGame onClick={handleClick} />
+      <HeaderGame onClick={handleClick} active={activeAbout} />
 
       <GameWrapper />
 

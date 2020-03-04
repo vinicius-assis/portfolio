@@ -3,7 +3,7 @@ import image from '../../img/logo.png'
 import imageLight from '../../img/logo-light.png'
 
 const LogoGame = styled.img.attrs(props => ({
-  src: props.light ? imageLight : image,
+  src: props.active ? imageLight : image,
   alt: "Logo CollabCode"
 })
 )`
