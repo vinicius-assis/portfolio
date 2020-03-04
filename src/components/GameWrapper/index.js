@@ -5,6 +5,7 @@ import BoardGame from '../../objects/BoardGame'
 import InputGame from '../../objects/InputGame'
 import MoveDisplay from '../MoveDisplay'
 
+
 const Wrapper = styled.div`
   display: inline-flex;
   justify-content: center;
