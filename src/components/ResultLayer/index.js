@@ -18,9 +18,7 @@ const ResultWrapper = styled.div`
 
 const ResultLayer = () => (
   <ResultWrapper>
-    <ResultModal>
-      <h2>Testando!</h2>
-    </ResultModal>
+    <ResultModal><h2>Testando!</h2></ResultModal>
   </ResultWrapper>
 )
 

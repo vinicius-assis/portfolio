@@ -1,6 +1,9 @@
-import styled from 'styled-components'
+import React from 'react'
 
-const ResultModal = styled.section`
+import styled from 'styled-components'
+import ResultButton from '../ResultButton'
+
+const ModalWrapper = styled.section`
   width: 200px;
   height: 200px;
   background-color: #fff;
@@ -8,5 +11,11 @@ const ResultModal = styled.section`
   justify-content: center;
   align-items: center;
 `
+
+const ResultModal = () => (
+  <ModalWrapper>
+    <ResultButton />
+  </ModalWrapper>
+)
 
 export default ResultModal
