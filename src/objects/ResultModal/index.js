@@ -5,7 +5,7 @@ import ResultButton from '../ResultButton'
 
 const ModalWrapper = styled.section`
   width: 400px;
-  height: 300px;
+  height: 250px;
   background-color: var(--color-second);
   display: flex;
   justify-content: center;
@@ -32,9 +32,9 @@ const ModalText = styled.p`
 
 
 
-const ResultModal = () => (
+const ResultModal = ({ winner }) => (
   <ModalWrapper>
-    <ModalText>O vencedor foi <span>X</span></ModalText>
+    <ModalText>O vencedor foi <span>{winner}</span></ModalText>
     <ResultButton theme={'var(--color-success)'}>Restart</ResultButton>
     <ResultButton theme={'var(--color-first)'} >Quit</ResultButton>
   </ModalWrapper>

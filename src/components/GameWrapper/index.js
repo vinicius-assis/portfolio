@@ -24,6 +24,7 @@ const GameWrapper = () => {
   const [playerX, setPlayerX] = useState([])
   const [playerO, setPlayerO] = useState([])
   const [disabled, setDisabled] = useState(false)
+  const [winner, setWinner] = useState('')
 
   const [nextPlayer, setNextPlayer] = useState('x')
   const [round, setRound] = useState(0)
@@ -106,9 +107,11 @@ const GameWrapper = () => {
       if (countO === 3) {
         setHistory(old => [...old, 'O ganhou!'])
         setDisabled(true)
+        setWinner('O')
       } else if (countX === 3) {
         setHistory(old => [...old, 'X ganhou!'])
         setDisabled(true)
+        setWinner('X')
       }
     })
 
@@ -127,7 +130,7 @@ const GameWrapper = () => {
       />
 
       <MoveDisplay show={show} history={history} action={changeHistory} disabled={disabled} />
-      <ResultLayer />
+      <ResultLayer disabled={disabled} winner={winner} />
     </Wrapper>
   )
 }

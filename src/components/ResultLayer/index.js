@@ -20,10 +20,10 @@ const ResultWrapper = styled.div`
   }
 `
 
-const ResultLayer = () => (
-  <ResultWrapper>
-    <ResultModal />
-  </ResultWrapper>
+const ResultLayer = ({ disabled, winner }) => (
+  (disabled && <ResultWrapper>
+    <ResultModal winner={winner} />
+  </ResultWrapper>)
 )
 
 export default ResultLayer
