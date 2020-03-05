@@ -32,10 +32,10 @@ const ModalText = styled.p`
 
 
 
-const ResultModal = ({ winner }) => (
+const ResultModal = ({ winner, action }) => (
   <ModalWrapper>
     <ModalText>O vencedor foi <span>{winner}</span></ModalText>
-    <ResultButton theme={'var(--color-success)'}>Restart</ResultButton>
+    <ResultButton theme={'var(--color-success)'} onClick={action}>Restart</ResultButton>
     <ResultButton theme={'var(--color-first)'} >Quit</ResultButton>
   </ModalWrapper>
 )

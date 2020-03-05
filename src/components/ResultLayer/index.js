@@ -20,9 +20,9 @@ const ResultWrapper = styled.div`
   }
 `
 
-const ResultLayer = ({ disabled, winner }) => (
+const ResultLayer = ({ disabled, winner, action }) => (
   (disabled && <ResultWrapper>
-    <ResultModal winner={winner} />
+    <ResultModal winner={winner} action={action} />
   </ResultWrapper>)
 )
 

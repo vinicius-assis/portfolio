@@ -78,6 +78,14 @@ const GameWrapper = () => {
     setNextPlayer(old => old === 'x' ? 'o' : 'x')
   }
 
+  const restartGame = () => {
+    setHistory(['Start'])
+    setDisabled(false)
+    setRound(0)
+    setHistoryGame(old => old.slice(0, 1))
+    setNextPlayer('x')
+  }
+
   useEffect(() => {
     // Check the last history game and set playerX and playerO
     setPlayerX(historyGame[historyGame.length - 1].state.map(item => item.content === 'x' ? item.id : ''))
@@ -130,7 +138,7 @@ const GameWrapper = () => {
       />
 
       <MoveDisplay show={show} history={history} action={changeHistory} disabled={disabled} />
-      <ResultLayer disabled={disabled} winner={winner} />
+      <ResultLayer disabled={disabled} winner={winner} action={restartGame} />
     </Wrapper>
   )
 }
