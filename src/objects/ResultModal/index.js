@@ -21,13 +21,22 @@ const ModalText = styled.p`
   font-size: var(--size-medium);
   font-weight: bold;
   margin: 2em auto;
+
+  & > span {
+    color: var(--color-success);
+    border:1px solid var(--color-success);
+    border-radius: 4px;
+    padding: 0.25em .5em;
+  }
 `
+
+
 
 const ResultModal = () => (
   <ModalWrapper>
-    <ModalText>O vencedor foi X</ModalText>
-    <ResultButton>Restart</ResultButton>
-    <ResultButton>Quit</ResultButton>
+    <ModalText>O vencedor foi <span>X</span></ModalText>
+    <ResultButton theme={'var(--color-success)'}>Restart</ResultButton>
+    <ResultButton theme={'var(--color-first)'} >Quit</ResultButton>
   </ModalWrapper>
 )
 
