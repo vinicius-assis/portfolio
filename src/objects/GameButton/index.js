@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const ResultButton = styled.button`
+const GameButton = styled.button`
   width: 100px;
   height: 40px;
   background-color: ${ props => props.theme};
@@ -19,4 +19,4 @@ const ResultButton = styled.button`
   }
 `
 
-export default ResultButton
+export default GameButton

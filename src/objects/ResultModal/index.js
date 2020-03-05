@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styled from 'styled-components'
-import ResultButton from '../ResultButton'
+import GameButton from '../GameButton'
 
 const ModalWrapper = styled.section`
   width: 400px;
@@ -35,8 +35,8 @@ const ModalText = styled.p`
 const ResultModal = ({ winner, action }) => (
   <ModalWrapper>
     <ModalText>O vencedor foi <span>{winner}</span></ModalText>
-    <ResultButton theme={'var(--color-success)'} onClick={action}>Restart</ResultButton>
-    <ResultButton theme={'var(--color-first)'} >Quit</ResultButton>
+    <GameButton theme={'var(--color-success)'} onClick={action}>Restart</GameButton>
+    <GameButton theme={'var(--color-first)'} >Quit</GameButton>
   </ModalWrapper>
 )
 
