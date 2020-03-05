@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
 import MovePlayer from '../../objects/MovePlayer';
+import GameButton from '../../objects/GameButton';
 
 const Wrapper = styled.section`
   margin-top: 50px;
@@ -15,9 +16,10 @@ const Wrapper = styled.section`
   }
 `
 
-const MoveDisplay = ({ show, history, action, disabled }) => (
+const MoveDisplay = ({ show, history, action, disabled, restart }) => (
   <Wrapper active={show}>
     {history.map((item, key) => (<MovePlayer content={item} key={key} data={key} action={action} disabled={disabled} />))}
+    {disabled && <GameButton theme={'var(--color-success)'} onClick={restart}>Restart</GameButton>}
   </Wrapper>
 )
 

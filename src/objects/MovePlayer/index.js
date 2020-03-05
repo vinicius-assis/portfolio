@@ -13,7 +13,7 @@ const Output = styled.output`
   padding: 5px 20px; 
   ${props => props.disabled ? '' : 'cursor: pointer;'}
 
-  ${props => props.disabled ? '&:last-child {background-color: var(--color-success); color: var(--color-zero)}' : ''}
+  ${props => props.disabled ? '&:last-of-type {background-color: var(--color-success); color: var(--color-zero)}' : ''}
 `
 
 const MovePlayer = ({ content, data, action, disabled }) => (

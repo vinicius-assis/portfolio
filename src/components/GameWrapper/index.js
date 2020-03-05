@@ -137,7 +137,7 @@ const GameWrapper = () => {
         action={showDisplay}
       />
 
-      <MoveDisplay show={show} history={history} action={changeHistory} disabled={disabled} />
+      <MoveDisplay show={show} history={history} action={changeHistory} disabled={disabled} restart={restartGame} />
       {disabled && <ResultLayer winner={winner} action={restartGame} />}
     </Wrapper>
   )
