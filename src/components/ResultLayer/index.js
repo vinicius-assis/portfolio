@@ -6,14 +6,18 @@ import ResultModal from '../../objects/ResultModal'
 
 const ResultWrapper = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 110vh;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #00000057;
-  top: 0;
+  top: -50%;
   z-index: 2;
+
+  @media (max-width: 740px) {
+    left: -62%;
+  }
 `
 
 const ResultLayer = () => (

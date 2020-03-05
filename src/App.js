@@ -4,7 +4,6 @@ import GlobalStyle from './style/generic/general'
 import HeaderGame from './components/HeaderGame'
 import LayerDark from './objects/LayerDark'
 import GameWrapper from './components/GameWrapper'
-import ResultLayer from './components/ResultLayer'
 
 const App = () => {
   const [activeAbout, setActiveAbout] = useState(false)
@@ -22,7 +21,6 @@ const App = () => {
         onClick={handleClick}
         active={activeAbout}
       />
-      <ResultLayer />
     </>
   )
 }
