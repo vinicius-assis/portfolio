@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import BoardGame from '../../objects/BoardGame'
 import InputGame from '../../objects/InputGame'
 import MoveDisplay from '../MoveDisplay'
-import ResultLayer from '../ResultLayer'
 
 
 const Wrapper = styled.div`
@@ -138,7 +137,6 @@ const GameWrapper = () => {
       />
 
       <MoveDisplay show={show} history={history} action={changeHistory} disabled={disabled} restart={restartGame} />
-      {disabled && <ResultLayer winner={winner} action={restartGame} />}
     </Wrapper>
   )
 }

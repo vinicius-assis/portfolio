@@ -6,18 +6,15 @@ import ResultModal from '../../objects/ResultModal'
 
 const ResultWrapper = styled.div`
   width: 100vw;
-  height: 110vh;
+  height: 100vh;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #00000057;
-  top: -50%;
+  top: 0;
+  left: 0;
   z-index: 2;
-
-  @media (max-width: 740px) {
-    left: -62%;
-  }
 `
 
 const ResultLayer = ({ winner, action }) => {
