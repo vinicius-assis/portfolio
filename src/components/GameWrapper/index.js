@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   }
 `
 
-const GameWrapper = () => {
+const GameWrapper = ({ onClick }) => {
   const [history, setHistory] = useState(['Start'])
   const [show, setShow] = useState(false)
   const [playerX, setPlayerX] = useState([])
@@ -83,6 +83,7 @@ const GameWrapper = () => {
     setRound(0)
     setHistoryGame(old => old.slice(0, 1))
     setNextPlayer('x')
+    setWinner('')
   }
 
   useEffect(() => {
@@ -123,6 +124,12 @@ const GameWrapper = () => {
     })
 
   }, [playerO, playerX])
+
+  useEffect(() => {
+    if (winner) {
+      onClick(disabled, winner, restartGame)
+    }
+  }, [winner])
 
   return (
     <Wrapper>
