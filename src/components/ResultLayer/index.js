@@ -18,13 +18,18 @@ const ResultWrapper = styled.div`
 `
 
 const ResultLayer = ({ winner, action }) => {
-  const [hide, setHide] = useState(false)
+  const [hide, setHide] = useState(true)
 
-  const hideWrapper = () => setHide(true)
+  const hideWrapper = () => setHide(false)
+
+  const handleReset = () => {
+    action()
+    hideWrapper()
+  }
 
   return (
-    (!hide && <ResultWrapper>
-      <ResultModal winner={winner} action={action} hideWrapper={hideWrapper} />
+    (hide && <ResultWrapper>
+      <ResultModal winner={winner} reset={handleReset} hideWrapper={hideWrapper} />
     </ResultWrapper>)
   )
 }
