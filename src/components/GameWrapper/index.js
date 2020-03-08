@@ -126,9 +126,7 @@ const GameWrapper = ({ onClick }) => {
   }, [playerO, playerX])
 
   useEffect(() => {
-    if (winner) {
-      onClick(disabled, winner, restartGame)
-    }
+    onClick(disabled, winner, restartGame)
   }, [winner])
 
   return (

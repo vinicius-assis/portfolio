@@ -15,22 +15,23 @@ const ResultWrapper = styled.div`
   top: 0;
   left: 0;
   z-index: 2;
+  transform: ${props => (props.winner && props.disabled && props.hide) ? 'translateX(0)' : 'translateX(-100%)'};
 `
 
-const ResultLayer = ({ winner, action }) => {
+const ResultLayer = ({ winner, action, disabled }) => {
   const [hide, setHide] = useState(true)
 
-  const hideWrapper = () => setHide(false)
+  const hideResult = () => setHide(false)
 
   const handleReset = () => {
     action()
-    hideWrapper()
+    setHide(false)
   }
 
   return (
-    (hide && <ResultWrapper>
-      <ResultModal winner={winner} reset={handleReset} hideWrapper={hideWrapper} />
-    </ResultWrapper>)
+    <ResultWrapper disabled={disabled} winner={winner} hide={hide}>
+      <ResultModal winner={winner} reset={handleReset} hideWrapper={hideResult} />
+    </ResultWrapper>
   )
 }
 

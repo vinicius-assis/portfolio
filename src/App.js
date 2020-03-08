@@ -20,6 +20,10 @@ const App = () => {
     })
   }
 
+  const resetResult = () => {
+    requiriments.restartGame()
+  }
+
   return (
     <>
       <GlobalStyle />
@@ -32,7 +36,7 @@ const App = () => {
         active={activeAbout}
       />
 
-      {requiriments.disabled && <ResultLayer winner={requiriments.winner} action={requiriments.restartGame} />}
+      <ResultLayer winner={requiriments.winner} action={resetResult} disabled={requiriments.disabled} />
 
       {/* disabled, winner, restartGame */}
     </>
