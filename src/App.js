@@ -12,6 +12,7 @@ const App = () => {
 
   const handleClick = () => activeAbout ? setActiveAbout(false) : setActiveAbout(true)
 
+  // Function to get requirements by gameWrapper
   const getRequiriments = (first, second, third) => {
     setRequiriments({
       disabled: first,
