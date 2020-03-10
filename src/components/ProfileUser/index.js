@@ -40,6 +40,10 @@ const ProfileWrapper = styled.dl`
     margin: 0 auto;
   }
 
+  & > .download {
+    margin-top: 4em;
+  }
+
 `
 
 const ProfileUser = () => (
@@ -62,8 +66,8 @@ const ProfileUser = () => (
       <IconSocial action="https://twitter.com/VinciusDev" social={Twitter} alt="Logo da Twitter" />
       <IconSocial action="https://www.instagram.com/viniax/" social={Instagram} alt="Logo da Instagram" />
     </dd>
-    <dd>
-      <DownloadButton>Download</DownloadButton>
+    <dd className="download">
+      <DownloadButton>Curriculum Download</DownloadButton>
     </dd>
   </ProfileWrapper>
 )
