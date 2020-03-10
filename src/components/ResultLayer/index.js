@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 
 import styled from 'styled-components'
@@ -15,21 +15,29 @@ const ResultWrapper = styled.div`
   top: 0;
   left: 0;
   z-index: 2;
-  transform: ${props => (props.winner && props.disabled && props.hide) ? 'translateX(0)' : 'translateX(-100%)'};
+  transform: ${props => props.hide ? 'translateX(0)' : 'translateX(-100%)'};
 `
 
 const ResultLayer = ({ winner, action, disabled }) => {
-  const [hide, setHide] = useState(true)
+  const [hide, setHide] = useState(false)
+  const [show, setShow] = useState(true)
 
-  const hideResult = () => setHide(false)
+  const hideResult = () => {
+    setHide(false)
+    setShow(true)
+  }
 
   const handleReset = () => {
     action()
     setHide(false)
   }
 
+  useEffect(() => {
+    winner && show ? setHide(true) : setHide(false)
+  }, [winner, show])
+
   return (
-    <ResultWrapper disabled={disabled} winner={winner} hide={hide}>
+    <ResultWrapper hide={hide} disabled={disabled}>
       <ResultModal winner={winner} reset={handleReset} hideWrapper={hideResult} />
     </ResultWrapper>
   )

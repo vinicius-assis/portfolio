@@ -37,8 +37,6 @@ const App = () => {
       />
 
       <ResultLayer winner={requiriments.winner} action={resetResult} disabled={requiriments.disabled} />
-
-      {/* disabled, winner, restartGame */}
     </>
   )
 }
