@@ -135,7 +135,7 @@ const GameWrapper = ({ onClick }) => {
 
       <InputGame
         type="checkbox"
-        content="Mostrar eventos"
+        content="Show moves"
         id="show"
         value="show"
         action={showDisplay}
