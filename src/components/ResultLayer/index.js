@@ -15,7 +15,7 @@ const ResultWrapper = styled.div`
   top: 0;
   left: 0;
   z-index: 2;
-  transform: ${props => props.hide ? 'translateX(0)' : 'translateX(-100%)'};
+  display: ${props => props.hide ? 'flex' : 'none'};
 `
 
 const ResultLayer = ({ winner, action, disabled }) => {
