@@ -9,6 +9,7 @@ import Linkedin from '../../img/linkedin.png'
 import Facebook from '../../img/facebook.png'
 import Twitter from '../../img/twitter.png'
 import Instagram from '../../img/instagram.png'
+import DownloadButton from '../../objects/DownloadButton'
 
 
 const ProfileWrapper = styled.dl`
@@ -60,6 +61,9 @@ const ProfileUser = () => (
       <IconSocial action="https://www.facebook.com/vinicius.assiis" social={Facebook} alt="Logo da Facebook" />
       <IconSocial action="https://twitter.com/VinciusDev" social={Twitter} alt="Logo da Twitter" />
       <IconSocial action="https://www.instagram.com/viniax/" social={Instagram} alt="Logo da Instagram" />
+    </dd>
+    <dd>
+      <DownloadButton>Download</DownloadButton>
     </dd>
   </ProfileWrapper>
 )
