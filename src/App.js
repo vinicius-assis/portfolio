@@ -8,13 +8,13 @@ import ResultLayer from './components/ResultLayer'
 
 const App = () => {
   const [activeAbout, setActiveAbout] = useState(false)
-  const [requiriments, setRequiriments] = useState({})
+  const [requirements, setRequirements] = useState({})
 
   const handleClick = () => activeAbout ? setActiveAbout(false) : setActiveAbout(true)
 
   // Function to get requirements by gameWrapper
-  const getRequiriments = (first, second, third) => {
-    setRequiriments({
+  const getRequirements = (first, second, third) => {
+    setRequirements({
       disabled: first,
       winner: second,
       restartGame: third
@@ -22,7 +22,7 @@ const App = () => {
   }
 
   const resetResult = () => {
-    requiriments.restartGame()
+    requirements.restartGame()
   }
 
   return (
@@ -30,14 +30,14 @@ const App = () => {
       <GlobalStyle />
       <HeaderGame onClick={handleClick} active={activeAbout} />
 
-      <GameWrapper onClick={getRequiriments} />
+      <GameWrapper onClick={getRequirements} />
 
       <LayerDark
         onClick={handleClick}
         active={activeAbout}
       />
 
-      <ResultLayer winner={requiriments.winner} action={resetResult} disabled={requiriments.disabled} />
+      <ResultLayer winner={requirements.winner} action={resetResult} disabled={requirements.disabled} />
     </>
   )
 }
