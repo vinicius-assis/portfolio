@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Curriculum from '../../cv/Curriculum-09-10.pdf'
+import Curriculum from '../../cv/Curriculum.pdf'
 
 const DownloadButton = styled.a.attrs({
   href: Curriculum,
