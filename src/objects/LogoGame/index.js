@@ -7,11 +7,7 @@ const LogoGame = styled.img.attrs(props => ({
   alt: "Logo CollabCode"
 })
 )`
-  width: 131px;
-
-  @media (min-width: 740px) {
-    width: auto;
-  }
+  width: auto;
 `
 
 export default LogoGame
