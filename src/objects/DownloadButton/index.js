@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Curriculum from '../../cv/Curriculum.pdf'
+import Curriculum from '../../cv/Curriculo.pdf'
 
 const DownloadButton = styled.a.attrs({
   href: Curriculum,
@@ -13,7 +13,7 @@ const DownloadButton = styled.a.attrs({
   margin-top: 1em;
   text-decoration: none;
   font-weight: 600;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
 
   &:hover {
     background-color: unset;
