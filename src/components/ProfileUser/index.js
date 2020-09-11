@@ -51,10 +51,11 @@ const ProfileUser = () => (
     </dd>
     <dt className="title">Vinícius Assis</dt>
     <dd className="description">
-      Migrated from Administration to Development. Javascript lover and all your
-      ecosystem.
+      A technology and music lover. Back in 2018, I decided to migrate from
+      administration to the world of programming and started studying web
+      development.
       <br />
-      Front-end Developer at Akredito
+      I'm currently a Front-end Developer at Akredito.
     </dd>
     <dd className="socials">
       <IconSocial
